@@ -1,0 +1,17 @@
+[
+	{
+		"OrganizationName": "Piano",
+		"OrganizationId": "1",
+		"Description": "Holds classes of piano students"
+	},
+	{
+		"OrganizationName": "Drums",
+		"OrganizationId": "2",
+		"Description": "Holds classes of drum students"
+    },
+    {
+		"OrganizationName": "Guitar",
+		"OrganizationId": "3",
+		"Description": "Holds classes of guitar students"
+	}
+]
