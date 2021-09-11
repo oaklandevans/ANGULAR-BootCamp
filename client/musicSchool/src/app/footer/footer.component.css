@@ -1,0 +1,15 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    outline: 3px solid #000;
+    background-color: rgb(200,216,228);
+    width: 98%;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    margin: 1%;
+}
+
+footer > * {
+    margin: 1em;
+}
