@@ -12,15 +12,6 @@ main > * {
     margin: 2em;
 }
 
-.organization {
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 1em;
-    border: solid black 2px;
-    border-radius: 10px;
-    background-color: rgb(242,242,242);
-}
-
 .musicClasses {
     display: flex;
     flex-wrap: wrap;
