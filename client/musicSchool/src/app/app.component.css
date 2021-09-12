@@ -1,6 +1,5 @@
-#home-page-container {
+.home-page-container {
     display: flex;
     width: 100%;
-    flex-direction: column;
-    
+    flex-direction: column; 
 }

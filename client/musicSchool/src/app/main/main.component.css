@@ -2,7 +2,6 @@ main {
     display: flex;
     outline: 3px solid #000;
     flex-direction: column;
-    background-color: rgb(200,216,228);
     width: 98%;
     min-height: 48rem;
     align-items: flex-start;

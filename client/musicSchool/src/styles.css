@@ -6,15 +6,32 @@ body {
     margin:0;
 }
 
-#wrapper {
+/* //Color Palette//
+
+    Olive: #A3BCB6
+    Green Leaf: #39603D
+    Brown Grey: #3C403D
+    Tanly: #DADED4
+    White: #FFFFFF 
+*/
+
+.rootScreen {
     min-height: 100%;
     width: 100%;
     height: 150em;
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    background-color: rgb(43,103,119);
+    background-color:#3C403D;
     text-align: center;
+}
+
+.componentColor {
+    background-color:#A3BCB6;
+}
+
+.ButtonColor {
+    background-color: #DADED4;
 }
 
 .Button {
@@ -23,6 +40,5 @@ body {
     padding: 1em;
     border: solid black 2px;
     border-radius: 10px;
-    background-color: rgb(242,242,242);
     cursor: pointer;
 }
