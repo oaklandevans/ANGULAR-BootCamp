@@ -5,7 +5,7 @@ header {
     background-color: rgb(200,216,228);
     width: 98%;
     align-items: center;
-    margin: 1%;
+    margin: 1rem 1%;
 }
 
 header > * {
