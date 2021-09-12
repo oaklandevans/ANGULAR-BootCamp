@@ -16,3 +16,12 @@ body {
     background-color: rgb(242,242,242);
     text-align: center;
 }
+
+.Button {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 1em;
+    border: solid black 2px;
+    border-radius: 10px;
+    cursor: pointer;
+}
