@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @charset "utf-8";
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Bebasneue, Helvetica, sans-serif;
     padding:0;
     margin:0;
 }
@@ -27,11 +27,12 @@ body {
 }
 
 .componentColor {
-    background-color:#A3BCB6;
+    background-color:#DADED4;
 }
 
 .ButtonColor {
-    background-color: #DADED4;
+    background-color:#A3BCB6;
+    
 }
 
 .Button {
