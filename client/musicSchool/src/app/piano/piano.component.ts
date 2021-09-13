@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MusicClass } from '../models/music-class';
+import { OrganizationService } from '../services/organization.service';
 
 @Component({
   selector: 'app-piano',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PianoComponent implements OnInit {
 
-  constructor() { }
+  OrgId = '1';
+  musicClass: MusicClass;
+  groups: MusicClass[];
+  errorMessage: string;
+
+  constructor( private organizationService: OrganizationService ) { }
 
   ngOnInit(): void {
+    this.organizationService.getGroupsByOrganizationId(this.OrgId)
+      .subscribe(
+        (res: any) => {
+          this.groups = res;
+          console.log(this.groups);
+        }, err => {
+          this.errorMessage = err;
+          console.log(this.errorMessage = err.message);
+        }
+      );
   }
 
 }
