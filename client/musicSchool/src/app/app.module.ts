@@ -11,6 +11,7 @@ import { PianoComponent } from './piano/piano.component';
 import { DrumComponent } from './drum/drum.component';
 import { GuitarComponent } from './guitar/guitar.component';
 import { DefaultComponent } from './default/default.component';
+import { GroupDetailsComponent } from './group-details/group-details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DefaultComponent } from './default/default.component';
     PianoComponent,
     DrumComponent,
     GuitarComponent,
-    DefaultComponent
+    DefaultComponent,
+    GroupDetailsComponent
   ],
   imports: [
     BrowserModule,
