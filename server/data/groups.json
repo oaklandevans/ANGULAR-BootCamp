@@ -1,1 +1,81 @@
-[{"GroupId":1,"GroupName":"Classical Piano","OrganizationName":"Piano","SponsorName":"Ivan Eddelbrock","SponsorPhone":"555-123-4567","SponsorEmail":"eivan@schoolofrock.com","MaxGroupSize":7,"Members":[{"MemberId":2,"MemberEmail":"aezra@student.com","MemberName":"Ezra Aiden","MemberPhone":"555-000-0002"},{"MemberId":4,"MemberEmail":"aslan_the_great@gmail.com","MemberName":"Elisha Aslan","MemberPhone":"555-000-0003"},{"MemberId":6,"MemberEmail":"susa2007@gmail.com","MemberName":"Siddalee Grace","MemberPhone":"555-000-0020"}]},{"GroupId":2,"GroupName":"Rock Drums","OrganizationName":"Drums","SponsorName":"Neal Peart","SponsorPhone":"555-000-0004","SponsorEmail":"pneal@schoolofrock.com","MaxGroupSize":7,"Members":[{"MemberId":5,"MemberEmail":"thebro@gmail.com","MemberName":"Zephaniah Hughes","MemberPhone":"555-000-0006"}]},{"GroupId":3,"GroupName":"Electric Guitar Fundamentals","OrganizationName":"Guitar","SponsorName":"Zachary Westly","SponsorPhone":"555-000-0012","SponsorEmail":"zwest@schoolofrock.com","MaxGroupSize":7,"Members":[{"MemberId":3,"MemberEmail":"ian_the_great@gmail.com","MemberName":"Ian Auston","MemberPhone":"555-000-0025"},{"MemberId":7,"MemberEmail":"student1@learn.com","MemberName":"student1","MemberPhone":"7771234567"}]},{"GroupId":7,"GroupName":"Classical Guitar","OrganizationName":"Guitar","SponsorName":"Rob Lowe","SponsorPhone":"111-123-4567","SponsorEmail":"lrob@schoolofrock.com","MaxGroupSize":7,"Members":[]}]
+[
+    {
+        "GroupId": 1,
+        "GroupName": "Classical Piano",
+        "OrganizationName": "Piano",
+        "SponsorName": "Ivan Eddelbrock",
+        "SponsorPhone": "555-123-4567",
+        "SponsorEmail": "eivan@schoolofrock.com",
+        "MaxGroupSize": 7,
+        "Members": [
+            {
+                "MemberId": 2,
+                "MemberEmail": "aezra@student.com",
+                "MemberName": "Ezra Aiden",
+                "MemberPhone": "555-000-0002"
+            },
+            {
+                "MemberId": 4,
+                "MemberEmail": "aslan_the_great@gmail.com",
+                "MemberName": "Elisha Aslan",
+                "MemberPhone": "555-000-0003"
+            },
+            {
+                "MemberId": 6,
+                "MemberEmail": "susa2007@gmail.com",
+                "MemberName": "Siddalee Grace",
+                "MemberPhone": "555-000-0020"
+            }
+        ]
+    },
+    {
+        "GroupId": 2,
+        "GroupName": "Rock Drums",
+        "OrganizationName": "Drums",
+        "SponsorName": "Neal Peart",
+        "SponsorPhone": "555-000-0004",
+        "SponsorEmail": "pneal@schoolofrock.com",
+        "MaxGroupSize": 7,
+        "Members": [
+            {
+                "MemberId": 5,
+                "MemberEmail": "thebro@gmail.com",
+                "MemberName": "Zephaniah Hughes",
+                "MemberPhone": "555-000-0006"
+            }
+        ]
+    },
+    {
+        "GroupId": 3,
+        "GroupName": "Electric Guitar Fundamentals",
+        "OrganizationName": "Guitar",
+        "SponsorName": "Zachary Westly",
+        "SponsorPhone": "555-000-0012",
+        "SponsorEmail": "zwest@schoolofrock.com",
+        "MaxGroupSize": 7,
+        "Members": [
+            {
+                "MemberId": 3,
+                "MemberEmail": "ian_the_great@gmail.com",
+                "MemberName": "Ian Auston",
+                "MemberPhone": "555-000-0025"
+            },
+            {
+                "MemberId": 7,
+                "MemberEmail": "student1@learn.com",
+                "MemberName": "student1",
+                "MemberPhone": "7771234567"
+            }
+        ]
+    },
+    {
+        "GroupId": 7,
+        "GroupName": "Classical Guitar",
+        "OrganizationName": "Guitar",
+        "SponsorName": "Rob Lowe",
+        "SponsorPhone": "111-123-4567",
+        "SponsorEmail": "lrob@schoolofrock.com",
+        "MaxGroupSize": 7,
+        "Members": []
+    }
+]
