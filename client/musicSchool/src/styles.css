@@ -42,3 +42,28 @@ body {
     border-radius: 10px;
     cursor: pointer;
 }
+
+.musicClasses {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.group {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 1em;
+    border: solid black 2px;
+    border-radius: 10px;
+    background-color: #A3BCB6;
+    margin: 1em;
+    cursor: pointer;
+}
+
+.flex {
+    display: flex;
+}
+
+.mar1 {
+    margin: 1rem;
+}
