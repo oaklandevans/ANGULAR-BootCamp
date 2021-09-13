@@ -9,19 +9,19 @@
         "MaxGroupSize": 7,
         "Members": [
             {
-                "MemberId": 2,
+                "MemberId": 1,
                 "MemberEmail": "aezra@student.com",
                 "MemberName": "Ezra Aiden",
                 "MemberPhone": "555-000-0002"
             },
             {
-                "MemberId": 4,
+                "MemberId": 2,
                 "MemberEmail": "aslan_the_great@gmail.com",
                 "MemberName": "Elisha Aslan",
                 "MemberPhone": "555-000-0003"
             },
             {
-                "MemberId": 6,
+                "MemberId": 3,
                 "MemberEmail": "susa2007@gmail.com",
                 "MemberName": "Siddalee Grace",
                 "MemberPhone": "555-000-0020"
@@ -30,6 +30,16 @@
     },
     {
         "GroupId": 2,
+        "GroupName": "Keyboard Improv",
+        "OrganizationName": "Piano",
+        "SponsorName": "Jackie Chan",
+        "SponsorPhone": "222-123-4567",
+        "SponsorEmail": "cjackie@schoolofrock.com",
+        "MaxGroupSize": 7,
+        "Members": []
+    },
+    {
+        "GroupId": 3,
         "GroupName": "Rock Drums",
         "OrganizationName": "Drums",
         "SponsorName": "Neal Peart",
@@ -38,7 +48,7 @@
         "MaxGroupSize": 7,
         "Members": [
             {
-                "MemberId": 5,
+                "MemberId": 4,
                 "MemberEmail": "thebro@gmail.com",
                 "MemberName": "Zephaniah Hughes",
                 "MemberPhone": "555-000-0006"
@@ -46,7 +56,7 @@
         ]
     },
     {
-        "GroupId": 3,
+        "GroupId": 4,
         "GroupName": "Electric Guitar Fundamentals",
         "OrganizationName": "Guitar",
         "SponsorName": "Zachary Westly",
@@ -55,17 +65,27 @@
         "MaxGroupSize": 7,
         "Members": [
             {
-                "MemberId": 3,
+                "MemberId": 5,
                 "MemberEmail": "ian_the_great@gmail.com",
                 "MemberName": "Ian Auston",
                 "MemberPhone": "555-000-0025"
             },
             {
-                "MemberId": 7,
+                "MemberId": 6,
                 "MemberEmail": "student1@learn.com",
                 "MemberName": "student1",
                 "MemberPhone": "7771234567"
             }
         ]
+    },
+    {
+        "GroupId": 5,
+        "GroupName": "Classical Guitar",
+        "OrganizationName": "Guitar",
+        "SponsorName": "Rob Lowe",
+        "SponsorPhone": "111-123-4567",
+        "SponsorEmail": "lrob@schoolofrock.com",
+        "MaxGroupSize": 7,
+        "Members": []
     }
 ]
