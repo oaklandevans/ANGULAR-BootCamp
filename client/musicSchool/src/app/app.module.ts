@@ -10,6 +10,7 @@ import { MainComponent } from './main/main.component';
 import { PianoComponent } from './piano/piano.component';
 import { DrumComponent } from './drum/drum.component';
 import { GuitarComponent } from './guitar/guitar.component';
+import { DefaultComponent } from './default/default.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { GuitarComponent } from './guitar/guitar.component';
     MainComponent,
     PianoComponent,
     DrumComponent,
-    GuitarComponent
+    GuitarComponent,
+    DefaultComponent
   ],
   imports: [
     BrowserModule,

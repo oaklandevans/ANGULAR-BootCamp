@@ -1,7 +1,27 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Route, RouterModule, Routes } from '@angular/router';
+import { AppComponent } from './app.component';
+import { DefaultComponent } from './default/default.component';
+import { DrumComponent } from './drum/drum.component';
+import { GuitarComponent } from './guitar/guitar.component';
+import { PianoComponent } from './piano/piano.component';
 
-const routes: Routes = [];
+const fallbackRoute: Route = {
+  path: '**', component: DefaultComponent
+};
+
+const routes: Routes = [
+  {
+    path: '',
+    children: [
+        { path: '', component: DefaultComponent },
+        { path: 'piano', component: PianoComponent },
+        { path: 'drum', component: DrumComponent },
+        { path: 'guitar', component: GuitarComponent },
+        fallbackRoute
+    ]
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
