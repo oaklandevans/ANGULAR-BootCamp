@@ -4,24 +4,11 @@
 </div>
 
 <div class="musicClasses flex">
-    <div type="button" class="group" routerLink="group-details">
-        <p>class name</p>
-        <p>teacher</p>
-        <p>#students</p>
+    
+    <div type="button" class="group" routerLink="group-details" *ngFor="let musicGroup of groups">
+        <h3>{{musicGroup.GroupName}}</h3>
+        <p>Teacher: {{musicGroup.SponsorName}}</p>
+        <p>#students: {{musicGroup.Members.length}}</p>
     </div>
-    <div type="button" class="group">
-        <p>class name</p>
-        <p>teacher</p>
-        <p>#students</p>
-    </div>
-    <div type="button" class="group">
-        <p>class name</p>
-        <p>teacher</p>
-        <p>#students</p>
-    </div>
-    <div type="button" class="group">
-        <p>class name</p>
-        <p>teacher</p>
-        <p>#students</p>
-    </div>
+    
 </div>
