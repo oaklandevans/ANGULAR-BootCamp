@@ -7,6 +7,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './nav/nav.component';
 import { MainComponent } from './main/main.component';
+import { PianoComponent } from './piano/piano.component';
+import { DrumComponent } from './drum/drum.component';
+import { GuitarComponent } from './guitar/guitar.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { MainComponent } from './main/main.component';
     HeaderComponent,
     FooterComponent,
     NavComponent,
-    MainComponent
+    MainComponent,
+    PianoComponent,
+    DrumComponent,
+    GuitarComponent
   ],
   imports: [
     BrowserModule,
