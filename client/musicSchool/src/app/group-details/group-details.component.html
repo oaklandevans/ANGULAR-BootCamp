@@ -1,1 +1,10 @@
-<p>group-details works!</p>
+<div class="GroupDetailsStyles">
+    <h1>Class Details</h1>
+
+    <section *ngIf="musicGroup">
+        <h3>{{musicGroup.GroupName}}</h3>
+        <p>Teacher: {{musicGroup.SponsorName}}</p>
+        <p>#students: {{musicGroup.Members.length}}</p>
+    </section>
+    
+</div>

@@ -17,6 +17,10 @@ export class PianoComponent implements OnInit {
   constructor( private organizationService: OrganizationService ) { }
 
   ngOnInit(): void {
+    this.initializeComponent();
+  }
+
+  initializeComponent(): void {
     this.organizationService.getGroupsByOrganizationId(this.OrgId)
       .subscribe(
         (res: any) => {
@@ -27,6 +31,11 @@ export class PianoComponent implements OnInit {
           console.log(this.errorMessage = err.message);
         }
       );
+  }
+
+  saveGroupId(groupId: number): void {
+    this.organizationService.currentGroupId = groupId;
+    console.log(`Current Group Id: ${this.organizationService.currentGroupId}`);
   }
 
 }

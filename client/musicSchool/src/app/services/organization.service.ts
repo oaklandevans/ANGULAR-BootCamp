@@ -9,6 +9,7 @@ import { MusicClass } from '../models/music-class';
 
 export class OrganizationService {
 
+  GroupsUrl = 'http://localhost:8082/api/groups';
   addGroupUrl = 'http://localhost:8082/api/groups';
   groupsByOrganizationUrl = 'http://localhost:8082/api/groups/byorganization';
 
@@ -17,6 +18,7 @@ export class OrganizationService {
   };
 
   errorMessage: string;
+  currentGroupId: number;
 
   constructor( private http: HttpClient ) { }
 
@@ -34,4 +36,11 @@ export class OrganizationService {
     // console.log(typeof musicClass.GroupId);
     return results;
   }
+
+  getGroupByCurrentId(): Observable<MusicClass> {
+    const results: Observable<MusicClass> = this.http.get<MusicClass>(`${this.GroupsUrl}/${this.currentGroupId}`);
+    console.log(`getGroupsByCurrentId() returned ${results}`);
+    return results;
+  }
+
 }
