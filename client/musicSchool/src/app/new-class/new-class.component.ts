@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MusicClass } from '../models/music-class';
+import { OrganizationService } from '../services/organization.service';
 
 @Component({
   selector: 'app-new-class',
@@ -12,7 +13,7 @@ export class NewClassComponent implements OnInit {
   addClassForm: FormGroup;
   class: MusicClass;
 
-  constructor( private formBuilder: FormBuilder ) {
+  constructor( private formBuilder: FormBuilder, private organizationService: OrganizationService ) {
     this.initializeForm();
   }
 
@@ -32,4 +33,10 @@ export class NewClassComponent implements OnInit {
     );
   }
 
+  onSubmit(musicClass): void {
+    this.organizationService.addGroup(musicClass).subscribe();
+  }
+
+
 }
+

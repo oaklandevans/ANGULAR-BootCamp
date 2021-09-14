@@ -87,5 +87,15 @@
         "SponsorEmail": "lrob@schoolofrock.com",
         "MaxGroupSize": 7,
         "Members": []
+    },
+    {
+        "GroupId": 6,
+        "GroupName": "Keyboard Improv",
+        "OrganizationName": "Piano",
+        "SponsorName": "Jackie Chan",
+        "SponsorPhone": "222-123-4567",
+        "SponsorEmail": "cjackie@schoolofrock.com",
+        "MaxGroupSize": 7,
+        "Members": []
     }
 ]

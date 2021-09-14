@@ -9,6 +9,7 @@ import { MusicClass } from '../models/music-class';
 
 export class OrganizationService {
 
+  addGroupUrl = 'http://localhost:8082/api/groups';
   groupsByOrganizationUrl = 'http://localhost:8082/api/groups/byorganization';
 
   jsonContentTypeHeaders = {
@@ -24,6 +25,13 @@ export class OrganizationService {
   getGroupsByOrganizationId(OrgId: string): Observable<MusicClass[]> {
     const results: Observable<MusicClass[]> = this.http.get<MusicClass[]>(`${this.groupsByOrganizationUrl}/${OrgId}`);
     console.log(`getGroupsByOrganizationId(${OrgId}) returned ${results}`);
+    return results;
+  }
+
+  addGroup(musicClass: MusicClass): Observable<MusicClass> {
+    const results: Observable<MusicClass> = this.http.post<MusicClass>(this.addGroupUrl, musicClass, this.jsonContentTypeHeaders);
+    console.log(`addNewClass(${musicClass}) returned ${results}`);
+    // console.log(typeof musicClass.GroupId);
     return results;
   }
 }

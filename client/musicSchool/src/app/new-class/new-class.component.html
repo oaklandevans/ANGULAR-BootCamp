@@ -1,30 +1,36 @@
 <div class="NewClassForm">
     <h1>Add New Class!</h1>
-    <form action="" class="formItems">
+
+    <form [formGroup]="addClassForm" class="formItems">
 
         <label for="GroupName">Class Name: </label>
-        <input id="GroupName" type="text">
+        <input id="GroupName" type="text" formControlName="GroupName">
 
         <label for="OrganizationName">Instrument: </label>
-        <select name="OrganizationName" id="OrganizationName">
+        <select name="OrganizationName" id="OrganizationName" formControlName="OrganizationName">
             <option value="Piano">Piano</option>
             <option value="Drums">Drums</option>
             <option value="Guitar">Guitar</option>
         </select>
 
         <label for="SponsorName">Teacher Name: </label>
-        <input id="SponsorName" type="text">
+        <input id="SponsorName" type="text" formControlName="SponsorName">
 
         <label for="SponsorPhone">Teacher Phone: </label>
-        <input id="SponsorPhone" type="tel">
+        <input id="SponsorPhone" type="tel" formControlName="SponsorPhone">
 
         <label for="SponsorEmail">Teacher Email: </label>
-        <input id="SponsorEmail" type="email">
+        <input id="SponsorEmail" type="email" formControlName="SponsorEmail">
 
         <label for="MaxGroupSize">Class Capacity: </label>
-        <input id="MaxGroupSize" type="number">
+        <input id="MaxGroupSize" type="number" formControlName="MaxGroupSize">
 
-        <input class="submitButton" type="submit" value="Submit">
+        <input class="submitButton" type="submit" value="Submit" (click)="onSubmit(addClassForm.value)">
 
     </form>
+
+    <!-- <p>Form Value: {{ addClassForm.value | json}}</p>
+    <p>Form Status: {{ addClassForm.status | json}}</p> -->
+
+
 </div>
