@@ -5,6 +5,7 @@ import { DrumComponent } from './drum/drum.component';
 import { GroupDetailsComponent } from './group-details/group-details.component';
 import { GuitarComponent } from './guitar/guitar.component';
 import { HomeComponent } from './home/home.component';
+import { NewClassComponent } from './new-class/new-class.component';
 import { PianoComponent } from './piano/piano.component';
 
 const fallbackRoute: Route = {
@@ -20,6 +21,7 @@ const routes: Routes = [
         { path: 'drum', component: DrumComponent },
         { path: 'guitar', component: GuitarComponent },
         { path: 'piano/group-details', component: GroupDetailsComponent },
+        { path: 'piano/new-class', component: NewClassComponent },
         fallbackRoute
     ]
   },
