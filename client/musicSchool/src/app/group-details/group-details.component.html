@@ -4,7 +4,7 @@
     <form [formGroup]="groupForm" class="formItems">
 
         <label for="GroupId">Class Id: </label>
-        <input id="GroupId" type="number" formControlName="GroupId">
+        <input id="GroupId" type="number" value="{{musicGroup?.GroupId}}" formControlName="GroupId">
 
         <label for="GroupName">Class Name: </label>
         <input id="GroupName" type="text" formControlName="GroupName">

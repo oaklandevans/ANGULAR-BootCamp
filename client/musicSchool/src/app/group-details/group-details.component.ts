@@ -21,7 +21,7 @@ export class GroupDetailsComponent implements OnInit {
     this.currentGroupId = this.organizationService.currentGroupId;
     this.initializeComponent();
     this.initializeForm();
-    // this.populateFormWithData();
+    this.populateFormWithData();
   }
 
   initializeComponent(): void {
