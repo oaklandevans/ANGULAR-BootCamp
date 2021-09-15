@@ -1,1 +1,23 @@
-<p>new-student works!</p>
+<div class="NewStudentForm">
+    <h1>Add New Student!</h1>
+
+    <form [formGroup]="addStudentForm" class="formItems">
+
+        <label for="MemberEmail">Student Email: </label>
+        <input id="MemberEmail" type="email" formControlName="MemberEmail">
+
+        <label for="MemberName">Student Name: </label>
+        <input id="MemberName" type="text" formControlName="MemberName">
+
+        <label for="MemberPhone">Student Phone: </label>
+        <input id="MemberPhone" type="tel" formControlName="MemberPhone">
+
+
+        <input class="submitButton" type="submit" value="Submit" (click)="onSubmit(addStudentForm.value)">
+
+    </form>
+
+    <!-- <p>Form Value: {{ addStudentForm.value | json}}</p>
+    <p>Form Status: {{ addStudentForm.status | json}}</p> -->
+
+</div>

@@ -1,0 +1,28 @@
+.NewStudentForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 1rem;
+    border: solid black 2px;
+    border-radius: 10px;
+    min-width: 100%;
+    min-height: 10rem;
+    background-color: #A3BCB6;
+    margin: 1rem;
+}
+
+label {
+    margin-top: 1rem;
+}
+
+.formItems {
+    display: flex;
+    flex-direction: column;
+}
+
+.submitButton {
+    margin: 2rem;
+}
