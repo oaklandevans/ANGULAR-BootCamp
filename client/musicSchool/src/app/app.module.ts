@@ -16,6 +16,7 @@ import { GuitarComponent } from './guitar/guitar.component';
 import { GroupDetailsComponent } from './group-details/group-details.component';
 import { HomeComponent } from './home/home.component';
 import { NewClassComponent } from './new-class/new-class.component';
+import { NewStudentComponent } from './new-student/new-student.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { NewClassComponent } from './new-class/new-class.component';
     GuitarComponent,
     GroupDetailsComponent,
     HomeComponent,
-    NewClassComponent
+    NewClassComponent,
+    NewStudentComponent
   ],
   imports: [
     CommonModule,

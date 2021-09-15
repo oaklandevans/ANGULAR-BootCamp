@@ -3,7 +3,7 @@
 
     <form [formGroup]="groupForm" class="formItems">
 
-        <label for="GroupId" >Class Id: </label>
+        <label for="GroupId">Class Id: </label>
         <input id="GroupId" type="number" formControlName="GroupId">
 
         <label for="GroupName">Class Name: </label>
@@ -31,5 +31,28 @@
         <input class="submitButton" type="submit" value="Save" (click)="onSaveForm(groupForm.value)">
 
     </form>
-    
+
+
+
+    <h3>Current Students</h3>
+
+    <div>
+        <div class="members" *ngIf="musicGroup?.Members.length">
+            <div type="button" class="student" *ngFor="let member of musicGroup.Members">
+                <p>Student Name: {{member.MemberName}}</p>
+            </div>
+        </div>
+
+        <div *ngIf="!musicGroup?.Members.length">
+            <p>No Students Currently Enrolled</p>
+        </div>
+    </div>
+
+
+    <div type="button" class="student" routerLink="new-student">
+        Add New Student
+    </div>
+
+
+
 </div>

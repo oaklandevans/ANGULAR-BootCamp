@@ -70,6 +70,28 @@ body {
     cursor: pointer;
 }
 
+.members {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.student {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 1rem;
+    border: solid black 2px;
+    border-radius: 10px;
+    min-width: 10rem;
+    min-height: 5rem;
+    background-color: #DADED4;
+    margin: 1rem;
+    cursor: pointer;
+}
+
 .flex {
     display: flex;
 }

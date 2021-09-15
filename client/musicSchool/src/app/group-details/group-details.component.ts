@@ -15,12 +15,13 @@ export class GroupDetailsComponent implements OnInit {
   currentGroupId: number;
   errorMessage: string;
 
-  constructor( private formBuilder: FormBuilder, private organizationService: OrganizationService ) { }
+  constructor(private formBuilder: FormBuilder, private organizationService: OrganizationService) { }
 
   ngOnInit(): void {
     this.currentGroupId = this.organizationService.currentGroupId;
     this.initializeComponent();
     this.initializeForm();
+    // this.populateFormWithData();
   }
 
   initializeComponent(): void {
@@ -48,8 +49,18 @@ export class GroupDetailsComponent implements OnInit {
         MaxGroupSize: ['', Validators.required]
       }
     );
+  }
 
-    this.groupForm.patchValue(this.musicGroup);
+  populateFormWithData(): void {
+    this.groupForm.setValue({
+      GroupId: this.musicGroup.GroupId,
+      GroupName: this.musicGroup.GroupName,
+      OrganizationName: this.musicGroup.OrganizationName,
+      SponsorName: this.musicGroup.SponsorName,
+      SponsorPhone: this.musicGroup.SponsorPhone,
+      SponsorEmail: this.musicGroup.SponsorEmail,
+      MaxGroupSize: this.musicGroup.MaxGroupSize
+    });
   }
 
   onSaveForm(musicClass): void {

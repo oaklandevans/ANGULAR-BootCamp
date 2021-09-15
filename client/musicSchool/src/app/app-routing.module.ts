@@ -6,6 +6,7 @@ import { GroupDetailsComponent } from './group-details/group-details.component';
 import { GuitarComponent } from './guitar/guitar.component';
 import { HomeComponent } from './home/home.component';
 import { NewClassComponent } from './new-class/new-class.component';
+import { NewStudentComponent } from './new-student/new-student.component';
 import { PianoComponent } from './piano/piano.component';
 
 const fallbackRoute: Route = {
@@ -20,12 +21,15 @@ const routes: Routes = [
         { path: 'piano', component: PianoComponent },
         { path: 'drum', component: DrumComponent },
         { path: 'guitar', component: GuitarComponent },
-        { path: 'piano/group-details', component: GroupDetailsComponent },
         { path: 'piano/new-class', component: NewClassComponent },
-        { path: 'drum/group-details', component: GroupDetailsComponent },
         { path: 'drum/new-class', component: NewClassComponent },
-        { path: 'guitar/group-details', component: GroupDetailsComponent },
         { path: 'guitar/new-class', component: NewClassComponent },
+        { path: 'piano/group-details', component: GroupDetailsComponent },
+        { path: 'drum/group-details', component: GroupDetailsComponent },
+        { path: 'guitar/group-details', component: GroupDetailsComponent },
+        { path: 'piano/group-details/new-student', component: NewStudentComponent},
+        { path: 'drum/group-details/new-student', component: NewStudentComponent},
+        { path: 'guitar/group-details/new-student', component: NewStudentComponent},
         fallbackRoute
     ]
   },
