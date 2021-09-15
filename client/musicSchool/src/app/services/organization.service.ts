@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { MusicClass } from '../models/music-class';
+import { Student } from '../models/student';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ export class OrganizationService {
 
   GroupsUrl = 'http://localhost:8082/api/groups';
   groupsByOrganizationUrl = 'http://localhost:8082/api/groups/byorganization';
+  membersUrl = 'http://localhost:8082/api/groups';
 
   jsonContentTypeHeaders = {
     headers: new HttpHeaders().set('Content-Type', 'application/json'),
@@ -52,6 +54,15 @@ export class OrganizationService {
       this.jsonContentTypeHeaders
     );
     console.log(`updateGroup(${musicClass}) returned ${results}`);
+    return results;
+  }
+
+  addMember(student: Student): Observable<Student> {
+    const results: Observable<Student> = this.http.post<Student>(
+      `${this.GroupsUrl}/${this.currentGroupId}/members`,
+      student,
+      this.jsonContentTypeHeaders);
+    console.log(`addStudent(${student}) returned ${results}`);
     return results;
   }
 

@@ -67,4 +67,9 @@ export class GroupDetailsComponent implements OnInit {
     this.organizationService.updateGroup(musicClass).subscribe();
   }
 
+  saveGroupId(groupId: number): void {
+    this.organizationService.currentGroupId = groupId;
+    console.log(`Current Group Id: ${this.organizationService.currentGroupId}`);
+  }
+
 }
