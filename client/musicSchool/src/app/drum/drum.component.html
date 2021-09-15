@@ -1,46 +1,18 @@
-<div class="flex">
+<div>
     <img src="/assets/images/drum-icon.png" width="100" height="100" class="mar1">
     <h2>Drum Classes</h2>
 </div>
-<div class="musicClasses">
-    <div type="button" class="group">
-        <p>class name</p>
-        <p>teacher</p>
-        <p>#students</p>
+
+<div class="musicClasses flex">
+    
+    <div type="button" class="group" routerLink="group-details" (click)="saveGroupId(musicGroup.GroupId)" *ngFor="let musicGroup of groups">
+        <h3>{{musicGroup.GroupName}}</h3>
+        <p>Teacher: {{musicGroup.SponsorName}}</p>
+        <p>#students: {{musicGroup.Members.length}}</p>
     </div>
-    <div type="button" class="group">
-        <p>class name</p>
-        <p>teacher</p>
-        <p>#students</p>
+
+    <div type="button" class="group" routerLink="new-class">
+        Add New Class
     </div>
-    <div type="button" class="group">
-        <p>class name</p>
-        <p>teacher</p>
-        <p>#students</p>
-    </div>
-    <div type="button" class="group">
-        <p>class name</p>
-        <p>teacher</p>
-        <p>#students</p>
-    </div>
-    <div type="button" class="group">
-        <p>class name</p>
-        <p>teacher</p>
-        <p>#students</p>
-    </div>
-    <div type="button" class="group">
-        <p>class name</p>
-        <p>teacher</p>
-        <p>#students</p>
-    </div>
-    <div type="button" class="group">
-        <p>class name</p>
-        <p>teacher</p>
-        <p>#students</p>
-    </div>
-    <div type="button" class="group">
-        <p>class name</p>
-        <p>teacher</p>
-        <p>#students</p>
-    </div>
+    
 </div>
