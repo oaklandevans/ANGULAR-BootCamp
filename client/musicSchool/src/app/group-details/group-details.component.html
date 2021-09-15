@@ -4,7 +4,7 @@
     <form [formGroup]="groupForm" class="formItems">
 
         <label for="GroupId">Class Id: </label>
-        <input id="GroupId" type="number" value="{{musicGroup?.GroupId}}" formControlName="GroupId">
+        <input id="GroupId" type="number" formControlName="GroupId">
 
         <label for="GroupName">Class Name: </label>
         <input id="GroupName" type="text" formControlName="GroupName">
@@ -32,6 +32,9 @@
 
     </form>
 
+    <p>Form Value: {{ groupForm.value | json}}</p>
+    <p>Form Status: {{ groupForm.status | json}}</p>
+
 
 
     <h3>Current Students</h3>
@@ -49,9 +52,13 @@
     </div>
 
 
-    <div type="button" class="student" routerLink="new-student" (click)="saveGroupId(musicGroup.GroupId)">
+    <div type="button" class="student" routerLink="new-student">
         Add New Student
     </div>
+
+    <button class="submitButton" (click)="deleteCurrentGroup()">
+        Delete This Class
+    </button>
 
 
 

@@ -10,9 +10,8 @@ import { Student } from '../models/student';
 
 export class OrganizationService {
 
-  GroupsUrl = 'http://localhost:8082/api/groups';
+  groupsUrl = 'http://localhost:8082/api/groups';
   groupsByOrganizationUrl = 'http://localhost:8082/api/groups/byorganization';
-  membersUrl = 'http://localhost:8082/api/groups';
 
   jsonContentTypeHeaders = {
     headers: new HttpHeaders().set('Content-Type', 'application/json'),
@@ -32,14 +31,14 @@ export class OrganizationService {
   }
 
   getGroupByCurrentId(): Observable<MusicClass> {
-    const results: Observable<MusicClass> = this.http.get<MusicClass>(`${this.GroupsUrl}/${this.currentGroupId}`);
+    const results: Observable<MusicClass> = this.http.get<MusicClass>(`${this.groupsUrl}/${this.currentGroupId}`);
     console.log(`getGroupsByCurrentId() returned ${results}`);
     return results;
   }
 
   addGroup(musicClass: MusicClass): Observable<MusicClass> {
     const results: Observable<MusicClass> = this.http.post<MusicClass>(
-      this.GroupsUrl,
+      this.groupsUrl,
       musicClass,
       this.jsonContentTypeHeaders
       );
@@ -49,7 +48,7 @@ export class OrganizationService {
 
   updateGroup(musicClass: MusicClass): Observable<MusicClass> {
     const results: Observable<MusicClass> = this.http.put<MusicClass>(
-      `${this.GroupsUrl}/${musicClass.GroupId}`,
+      this.groupsUrl,
       musicClass,
       this.jsonContentTypeHeaders
     );
@@ -57,9 +56,18 @@ export class OrganizationService {
     return results;
   }
 
+  deleteCurrentGroup(): Observable<MusicClass> {
+    const results: Observable<MusicClass> = this.http.delete<MusicClass>(
+      `${this.groupsUrl}/${this.currentGroupId}`,
+      this.jsonContentTypeHeaders
+    );
+    console.log(`deleteCurrentGroup(${this.currentGroupId}) returned ${results}`);
+    return results;
+  }
+
   addMember(student: Student): Observable<Student> {
     const results: Observable<Student> = this.http.post<Student>(
-      `${this.GroupsUrl}/${this.currentGroupId}/members`,
+      `${this.groupsUrl}/${this.currentGroupId}/members`,
       student,
       this.jsonContentTypeHeaders);
     console.log(`addStudent(${student}) returned ${results}`);

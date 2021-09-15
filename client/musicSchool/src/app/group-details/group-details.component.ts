@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MusicClass } from '../models/music-class';
 import { OrganizationService } from '../services/organization.service';
@@ -15,7 +16,11 @@ export class GroupDetailsComponent implements OnInit {
   currentGroupId: number;
   errorMessage: string;
 
-  constructor(private formBuilder: FormBuilder, private organizationService: OrganizationService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private organizationService: OrganizationService,
+    private location: Location
+  ) { }
 
   ngOnInit(): void {
     this.currentGroupId = this.organizationService.currentGroupId;
@@ -29,6 +34,7 @@ export class GroupDetailsComponent implements OnInit {
       .subscribe(
         (res: any) => {
           this.musicGroup = res;
+          this.populateFormWithData();
           console.log(this.musicGroup);
         }, err => {
           this.errorMessage = err;
@@ -52,24 +58,28 @@ export class GroupDetailsComponent implements OnInit {
   }
 
   populateFormWithData(): void {
-    this.groupForm.setValue({
-      GroupId: this.musicGroup.GroupId,
-      GroupName: this.musicGroup.GroupName,
-      OrganizationName: this.musicGroup.OrganizationName,
-      SponsorName: this.musicGroup.SponsorName,
-      SponsorPhone: this.musicGroup.SponsorPhone,
-      SponsorEmail: this.musicGroup.SponsorEmail,
-      MaxGroupSize: this.musicGroup.MaxGroupSize
-    });
+    this.groupForm.patchValue(
+      this.musicGroup
+    );
+    console.log(this.musicGroup?.GroupId);
   }
 
   onSaveForm(musicClass): void {
     this.organizationService.updateGroup(musicClass).subscribe();
+    this.location.back();
   }
 
-  saveGroupId(groupId: number): void {
-    this.organizationService.currentGroupId = groupId;
-    console.log(`Current Group Id: ${this.organizationService.currentGroupId}`);
+  // saveGroupId(groupId: number): void {
+  //   this.organizationService.currentGroupId = groupId;
+  //   console.log(`Current Group Id: ${this.organizationService.currentGroupId}`);
+  // }
+
+  deleteCurrentGroup(): void {
+    if (window.confirm('Are you sure you want to delete this class?'))
+    {
+      this.organizationService.deleteCurrentGroup().subscribe();
+      this.location.back();
+    }
   }
 
 }
