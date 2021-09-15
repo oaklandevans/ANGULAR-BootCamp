@@ -1,10 +1,35 @@
 <div class="GroupDetailsStyles">
     <h1>Class Details</h1>
 
-    <section *ngIf="musicGroup">
-        <h3>{{musicGroup.GroupName}}</h3>
-        <p>Teacher: {{musicGroup.SponsorName}}</p>
-        <p>#students: {{musicGroup.Members.length}}</p>
-    </section>
+    <form [formGroup]="groupForm" class="formItems">
+
+        <label for="GroupId" >Class Id: </label>
+        <input id="GroupId" type="number" formControlName="GroupId">
+
+        <label for="GroupName">Class Name: </label>
+        <input id="GroupName" type="text" formControlName="GroupName">
+
+        <label for="OrganizationName">Instrument: </label>
+        <select name="OrganizationName" id="OrganizationName" formControlName="OrganizationName">
+            <option value="Piano">Piano</option>
+            <option value="Drums">Drums</option>
+            <option value="Guitar">Guitar</option>
+        </select>
+
+        <label for="SponsorName">Teacher Name: </label>
+        <input id="SponsorName" type="text" formControlName="SponsorName">
+
+        <label for="SponsorPhone">Teacher Phone: </label>
+        <input id="SponsorPhone" type="tel" formControlName="SponsorPhone">
+
+        <label for="SponsorEmail">Teacher Email: </label>
+        <input id="SponsorEmail" type="email" formControlName="SponsorEmail">
+
+        <label for="MaxGroupSize">Class Capacity: </label>
+        <input id="MaxGroupSize" type="number" formControlName="MaxGroupSize">
+
+        <input class="submitButton" type="submit" value="Save" (click)="onSaveForm(groupForm.value)">
+
+    </form>
     
 </div>

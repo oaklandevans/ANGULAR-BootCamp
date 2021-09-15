@@ -13,3 +13,16 @@
     background-color: #A3BCB6;
     margin: 1rem;
 }
+
+.formItems {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 1rem;
+}
+
+.submitButton {
+    margin: 2rem;
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MusicClass } from '../models/music-class';
 import { OrganizationService } from '../services/organization.service';
 
@@ -9,15 +10,17 @@ import { OrganizationService } from '../services/organization.service';
 })
 export class GroupDetailsComponent implements OnInit {
 
+  groupForm: FormGroup;
   musicGroup: MusicClass;
   currentGroupId: number;
   errorMessage: string;
 
-  constructor( private organizationService: OrganizationService ) { }
+  constructor( private formBuilder: FormBuilder, private organizationService: OrganizationService ) { }
 
   ngOnInit(): void {
     this.currentGroupId = this.organizationService.currentGroupId;
     this.initializeComponent();
+    this.initializeForm();
   }
 
   initializeComponent(): void {
@@ -31,6 +34,26 @@ export class GroupDetailsComponent implements OnInit {
           console.log(this.errorMessage = err.message);
         }
       );
+  }
+
+  initializeForm(): void {
+    this.groupForm = this.formBuilder.group(
+      {
+        GroupId: ['', Validators.required],
+        GroupName: ['', Validators.required],
+        OrganizationName: ['', Validators.required],
+        SponsorName: ['', Validators.required],
+        SponsorPhone: ['', Validators.required],
+        SponsorEmail: ['', Validators.required],
+        MaxGroupSize: ['', Validators.required]
+      }
+    );
+
+    this.groupForm.patchValue(this.musicGroup);
+  }
+
+  onSaveForm(musicClass): void {
+    this.organizationService.updateGroup(musicClass).subscribe();
   }
 
 }
