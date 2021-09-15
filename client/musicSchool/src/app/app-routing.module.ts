@@ -22,6 +22,10 @@ const routes: Routes = [
         { path: 'guitar', component: GuitarComponent },
         { path: 'piano/group-details', component: GroupDetailsComponent },
         { path: 'piano/new-class', component: NewClassComponent },
+        { path: 'drum/group-details', component: GroupDetailsComponent },
+        { path: 'drum/new-class', component: NewClassComponent },
+        { path: 'guitar/group-details', component: GroupDetailsComponent },
+        { path: 'guitar/new-class', component: NewClassComponent },
         fallbackRoute
     ]
   },
