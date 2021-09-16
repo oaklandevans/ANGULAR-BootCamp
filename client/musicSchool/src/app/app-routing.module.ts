@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Route, RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import { DrumComponent } from './drum/drum.component';
 import { GroupDetailsComponent } from './group-details/group-details.component';
 import { GuitarComponent } from './guitar/guitar.component';
@@ -8,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { NewClassComponent } from './new-class/new-class.component';
 import { NewStudentComponent } from './new-student/new-student.component';
 import { PianoComponent } from './piano/piano.component';
+import { StudentDetailsComponent } from './student-details/student-details.component';
 
 const fallbackRoute: Route = {
   path: '**', component: HomeComponent
@@ -30,6 +30,9 @@ const routes: Routes = [
         { path: 'piano/group-details/new-student', component: NewStudentComponent},
         { path: 'drum/group-details/new-student', component: NewStudentComponent},
         { path: 'guitar/group-details/new-student', component: NewStudentComponent},
+        { path: 'piano/group-details/student-details', component: StudentDetailsComponent},
+        { path: 'drum/group-details/student-details', component: StudentDetailsComponent},
+        { path: 'guitar/group-details/student-details', component: StudentDetailsComponent},
         fallbackRoute
     ]
   },

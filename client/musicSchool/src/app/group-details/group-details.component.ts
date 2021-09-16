@@ -69,10 +69,10 @@ export class GroupDetailsComponent implements OnInit {
     this.location.back();
   }
 
-  // saveGroupId(groupId: number): void {
-  //   this.organizationService.currentGroupId = groupId;
-  //   console.log(`Current Group Id: ${this.organizationService.currentGroupId}`);
-  // }
+  saveMemberId(studentId: number): void {
+    this.organizationService.currentMemberId = studentId;
+    console.log(`Current Member Id: ${this.organizationService.currentMemberId}`);
+  }
 
   deleteCurrentGroup(): void {
     if (window.confirm('Are you sure you want to delete this class?'))
