@@ -1,4 +1,4 @@
-.NewStudentForm {
+.NewStudentPage {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,17 +12,4 @@
     min-height: 10rem;
     background-color: #aba9a6;
     margin: 1rem;
-}
-
-label {
-    margin-top: 1rem;
-}
-
-.formItems {
-    display: flex;
-    flex-direction: column;
-}
-
-.submitButton {
-    margin: 2rem;
 }

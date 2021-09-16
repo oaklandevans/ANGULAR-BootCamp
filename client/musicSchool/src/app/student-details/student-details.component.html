@@ -1,7 +1,7 @@
-<section class="StudentDetailsStyles">
+<section class="StudentDetailStyles">
     <h1>Student Details</h1>
 
-    <form [formGroup]="editStudentForm" class="formItems">
+    <form [formGroup]="editStudentForm" class="formStyles">
 
         <label for="MemberId">Student Id: </label>
         <input id="MemberId" type="number" formControlName="MemberId">
@@ -16,11 +16,11 @@
         <input id="MemberPhone" type="tel" formControlName="MemberPhone">
 
 
-        <input class="submitButton" type="submit" value="Submit" (click)="onSaveForm(editStudentForm.value)">
+        <input id="submitButton" type="submit" value="Submit" (click)="onSaveForm(editStudentForm.value)">
 
     </form>
 
-    <button class="submitButton" (click)="deleteCurrentStudent()">
+    <button class="deleteButton" (click)="deleteCurrentStudent()">
         Delete This Student
     </button>
 

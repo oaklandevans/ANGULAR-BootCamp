@@ -25,13 +25,69 @@ body {
     text-align: center;
 }
 
+.routerWrapper {
+    margin-bottom: 5rem;
+}
+
 .componentColor {
     background-color:#DADED4;
 }
 
-.ButtonColor {
-    background-color:#aba9a6;
-    
+.navButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 1em;
+    width: 5rem;
+    height: 2rem;
+    border: solid black 2px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color:#aba9a6
+}
+
+.deleteButton {
+    width: 10rem;
+    height: 2rem;
+    background-color: #b01f17;
+    font-weight: bold;
+}
+
+#saveButton {
+    width: 10rem;
+    height: 2rem;
+    background-color: #81915a;
+    font-weight: bold;
+    margin: 2rem;
+}
+
+#submitButton {
+    width: 10rem;
+    height: 2rem;
+    background-color: #a3cf91;
+    font-weight: bold;
+    margin: 2rem;
+}
+
+.formStyles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formStyles > label {
+    margin: 1rem;
+    font-size: 1.5rem;
+}
+
+.formStyles > input, select {
+    border: black 2px solid;
+    border-radius: 10px;
+    height: 2rem;
+    font-size: 1rem;
+    background-color: #DADED4;
 }
 
 .Button {

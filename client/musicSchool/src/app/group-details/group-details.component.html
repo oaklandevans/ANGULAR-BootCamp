@@ -1,7 +1,7 @@
 <div class="GroupDetailsStyles">
-    <h1>Class Details</h1>
+    <h1>Edit Class Details</h1>
 
-    <form [formGroup]="groupForm" class="formItems">
+    <form [formGroup]="groupForm" class="formStyles">
 
         <label for="GroupId" hidden>Class Id: </label>
         <input id="GroupId" type="number" formControlName="GroupId" hidden>
@@ -28,18 +28,20 @@
         <label for="MaxGroupSize">Class Capacity: </label>
         <input id="MaxGroupSize" type="number" formControlName="MaxGroupSize">
 
-        <input class="submitButton" type="submit" value="Save" (click)="onSaveForm(groupForm.value)">
+        <input id="submitButton" type="submit" value="Save" (click)="onSaveForm(groupForm.value)">
 
     </form>
 
     <!-- <p>Form Value: {{ groupForm.value | json}}</p>
     <p>Form Status: {{ groupForm.status | json}}</p> -->
 
+    <button class="deleteButton" (click)="deleteCurrentGroup()">
+        Delete This Class
+    </button>
 
+    <h3>Currently Enrolled Students</h3>
 
-    <h3>Current Students</h3>
-
-    <div>
+    <section>
         <div class="members" *ngIf="musicGroup?.Members.length">
             <div type="button" class="student" *ngFor="let member of musicGroup.Members" (click)="saveMemberId(member.MemberId)" routerLink="student-details">
                 <p>Student Name: {{member.MemberName}}</p>
@@ -49,15 +51,11 @@
         <div *ngIf="!musicGroup?.Members.length">
             <p>No Students Currently Enrolled</p>
         </div>
-    </div>
+    </section>
 
 
-    <div type="button" class="student" routerLink="new-student">
+    <button class="student" routerLink="new-student">
         Add New Student
-    </div>
-
-    <button class="submitButton" (click)="deleteCurrentGroup()">
-        Delete This Class
     </button>
 
 
