@@ -26,7 +26,6 @@ export class GroupDetailsComponent implements OnInit {
     this.currentGroupId = this.organizationService.currentGroupId;
     this.initializeComponent();
     this.initializeForm();
-    this.populateFormWithData();
   }
 
   initializeComponent(): void {
@@ -34,7 +33,9 @@ export class GroupDetailsComponent implements OnInit {
       .subscribe(
         (res: any) => {
           this.musicGroup = res;
-          this.populateFormWithData();
+          console.log(`GroupId: ${this.organizationService.currentGroupId}`)
+          console.log(`Current Group Id In LocalStorage In Group Details: ${localStorage.getItem("GroupId")}`);
+          this.populateFormWithData(this.musicGroup);
           console.log(this.musicGroup);
         }, err => {
           this.errorMessage = err;
@@ -57,10 +58,8 @@ export class GroupDetailsComponent implements OnInit {
     );
   }
 
-  populateFormWithData(): void {
-    this.groupForm.patchValue(
-      this.musicGroup
-    );
+  populateFormWithData(group): void {
+    this.groupForm.patchValue(group);
     console.log(this.musicGroup?.GroupId);
   }
 
