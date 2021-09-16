@@ -1,10 +1,10 @@
 <section class="StudentDetailStyles">
-    <h1>Student Details</h1>
+    <h1>Edit Student Details</h1>
 
     <form [formGroup]="editStudentForm" class="formStyles">
 
-        <label for="MemberId">Student Id: </label>
-        <input id="MemberId" type="number" formControlName="MemberId">
+        <label for="MemberId" hidden>Student Id: </label>
+        <input id="MemberId" type="number" formControlName="MemberId" hidden>
 
         <label for="MemberEmail">Student Email: </label>
         <input id="MemberEmail" type="email" formControlName="MemberEmail">

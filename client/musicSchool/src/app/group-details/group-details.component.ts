@@ -23,6 +23,7 @@ export class GroupDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.organizationService.currentGroupId = parseInt(localStorage.getItem("GroupId"));
     this.currentGroupId = this.organizationService.currentGroupId;
     this.initializeComponent();
     this.initializeForm();
@@ -72,7 +73,9 @@ export class GroupDetailsComponent implements OnInit {
 
   saveMemberId(studentId: number): void {
     this.organizationService.currentMemberId = studentId;
+    localStorage.setItem("StudentId", `${studentId}`);
     console.log(`Current Member Id: ${this.organizationService.currentMemberId}`);
+    console.log(`Current Student Id In LocalStorage: ${localStorage.getItem("StudentId")}`);
   }
 
   deleteCurrentGroup(): void {
