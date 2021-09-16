@@ -30,7 +30,7 @@ body {
 }
 
 .ButtonColor {
-    background-color:#A3BCB6;
+    background-color:#aba9a6;
     
 }
 
@@ -65,7 +65,7 @@ body {
     border-radius: 10px;
     min-width: 15rem;
     min-height: 10rem;
-    background-color: #A3BCB6;
+    background-color: #aba9a6;
     margin: 1rem;
     cursor: pointer;
 }

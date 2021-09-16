@@ -19,6 +19,7 @@ export class OrganizationService {
 
   errorMessage: string;
   currentGroupId: number;
+  currentMemberId: number;
 
   constructor( private http: HttpClient ) { }
 
@@ -71,6 +72,14 @@ export class OrganizationService {
       student,
       this.jsonContentTypeHeaders);
     console.log(`addStudent(${student}) returned ${results}`);
+    return results;
+  }
+
+  getMemberOfGroup(groupId: number, memberId: number): Observable<Student> {
+    const results: Observable<Student> = this.http.get<Student>(
+      `${this.groupsUrl}/${groupId}/members/${memberId}`
+    );
+    console.log(`getMemberOfGroup(${groupId}, ${memberId}) returned ${results}`);
     return results;
   }
 

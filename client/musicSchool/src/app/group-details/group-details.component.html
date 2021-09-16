@@ -32,8 +32,8 @@
 
     </form>
 
-    <p>Form Value: {{ groupForm.value | json}}</p>
-    <p>Form Status: {{ groupForm.status | json}}</p>
+    <!-- <p>Form Value: {{ groupForm.value | json}}</p>
+    <p>Form Status: {{ groupForm.status | json}}</p> -->
 
 
 
@@ -41,7 +41,7 @@
 
     <div>
         <div class="members" *ngIf="musicGroup?.Members.length">
-            <div type="button" class="student" *ngFor="let member of musicGroup.Members">
+            <div type="button" class="student" *ngFor="let member of musicGroup.Members" (click)="saveMemberId(member.MemberId)" routerLink="student-details">
                 <p>Student Name: {{member.MemberName}}</p>
             </div>
         </div>

@@ -17,6 +17,7 @@ import { GroupDetailsComponent } from './group-details/group-details.component';
 import { HomeComponent } from './home/home.component';
 import { NewClassComponent } from './new-class/new-class.component';
 import { NewStudentComponent } from './new-student/new-student.component';
+import { StudentDetailsComponent } from './student-details/student-details.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { NewStudentComponent } from './new-student/new-student.component';
     GroupDetailsComponent,
     HomeComponent,
     NewClassComponent,
-    NewStudentComponent
+    NewStudentComponent,
+    StudentDetailsComponent
   ],
   imports: [
     CommonModule,
