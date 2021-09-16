@@ -35,7 +35,9 @@ export class GuitarComponent implements OnInit {
 
   saveGroupId(groupId: number): void {
     this.organizationService.currentGroupId = groupId;
+    localStorage.setItem("GroupId", `${groupId}`);
     console.log(`Current Group Id: ${this.organizationService.currentGroupId}`);
+    console.log(`Current Group Id In LocalStorage: ${localStorage.getItem("GroupId")}`);
   }
 
 }

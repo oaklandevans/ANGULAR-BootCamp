@@ -24,6 +24,8 @@ export class StudentDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.organizationService.currentGroupId = parseInt(localStorage.getItem("GroupId"));
+    this.organizationService.currentMemberId = parseInt(localStorage.getItem("StudentId"));
     this.currentGroupId = this.organizationService.currentGroupId;
     this.currentMemberId = this.organizationService.currentMemberId;
     this.initializeForm();
@@ -65,16 +67,15 @@ export class StudentDetailsComponent implements OnInit {
   onSaveForm(student: Student): void {
     if (window.confirm('Are you sure you want to save current student details?')) {
       this.organizationService.updateMemberOfGroup(student).subscribe();
+      alert('Student Successfully Updated!');
     }
-    
-    confirm
     this.location.back();
   }
 
   deleteCurrentStudent(): void {
-    if (window.confirm('Are you sure you want to delete this student?'))
-    {
+    if (window.confirm('Are you sure you want to delete this student?')) {
       this.organizationService.deleteCurrentStudent().subscribe();
+      alert('Student Successfully Deleted!');
       this.location.back();
     }
   }

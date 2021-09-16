@@ -14,7 +14,7 @@ export class PianoComponent implements OnInit {
   groups: MusicClass[];
   errorMessage: string;
 
-  constructor( private organizationService: OrganizationService ) { }
+  constructor(private organizationService: OrganizationService) { }
 
   ngOnInit(): void {
     this.initializeComponent();

@@ -40,6 +40,7 @@ export class NewClassComponent implements OnInit {
 
   onSubmit(musicClass): void {
     this.organizationService.addGroup(musicClass).subscribe();
+    alert('New Class Added!');
     this.location.back();
   }
 
