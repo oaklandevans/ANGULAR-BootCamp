@@ -1,3 +1,29 @@
+# MusicSchool - Learn Music Now.
+
+This app is designed to manage class and student info of a music school called "Learn Music Now".
+To do so, this app has three categories: Piano, Drums, and Guitar.
+Within these categories, live our currently offered classes.
+Within these classes, live our students.
+
+# Getting Started
+
+Simply clone the repo to your machine.
+
+Open the folder containing the client and server files in editor of your choice.
+
+# run client
+
+cd client/musicSchool   // to get into the project
+
+ng serve --open         // to run and open app in a browser
+
+#  run server
+
+cd server               // to get into the server file
+
+node server.js          // to run server
+
+
 # MusicSchool
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.14.
