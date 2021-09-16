@@ -1,12 +1,14 @@
-footer {
+.footerStyle {
     display: flex;
     justify-content: flex-end;
     outline: 3px solid #000;
     width: 98%;
     align-items: center;
-    margin: 1rem 1%;
+    margin: 0 1%;
+    position:fixed;
+    bottom: 0;
 }
 
-footer > * {
+.footerStyle > * {
     margin: 2em;
 }

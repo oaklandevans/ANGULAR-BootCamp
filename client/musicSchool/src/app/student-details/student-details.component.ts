@@ -63,8 +63,20 @@ export class StudentDetailsComponent implements OnInit {
   }
 
   onSaveForm(student: Student): void {
-    // this.organizationService.updateGroup(musicClass).subscribe();
+    if (window.confirm('Are you sure you want to save current student details?')) {
+      this.organizationService.updateMemberOfGroup(student).subscribe();
+    }
+    
+    confirm
     this.location.back();
+  }
+
+  deleteCurrentStudent(): void {
+    if (window.confirm('Are you sure you want to delete this student?'))
+    {
+      this.organizationService.deleteCurrentStudent().subscribe();
+      this.location.back();
+    }
   }
 
 }

@@ -83,4 +83,22 @@ export class OrganizationService {
     return results;
   }
 
+  updateMemberOfGroup(student: Student): Observable<Student> {
+    const results: Observable<Student> = this.http.put<Student>(
+      `${this.groupsUrl}/${this.currentGroupId}/members`,
+      student,
+      this.jsonContentTypeHeaders);
+    console.log(`updateMemberOfGroup(${student}) returned ${results}`);
+    return results;
+  }
+
+  deleteCurrentStudent(): Observable<Student> {
+    const results: Observable<Student> = this.http.delete<Student>(
+      `${this.groupsUrl}/${this.currentGroupId}/members/${this.currentMemberId}`,
+      this.jsonContentTypeHeaders
+    );
+    console.log(`deleteCurrentStudent(Group# ${this.currentGroupId} Student# ${this.currentMemberId}) returned ${results}`);
+    return results;
+  }
+
 }

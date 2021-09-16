@@ -65,7 +65,9 @@ export class GroupDetailsComponent implements OnInit {
   }
 
   onSaveForm(musicClass): void {
-    this.organizationService.updateGroup(musicClass).subscribe();
+    if (window.confirm('Are you sure you want to save current class details?')) {
+      this.organizationService.updateGroup(musicClass).subscribe();
+    }
     this.location.back();
   }
 
