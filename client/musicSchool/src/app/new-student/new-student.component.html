@@ -5,13 +5,15 @@
 
         <label for="MemberEmail">Student Email: </label>
         <input id="MemberEmail" type="email" formControlName="MemberEmail">
+        <p *ngIf="!addStudentForm.controls['MemberEmail'].valid && addStudentForm.controls['MemberEmail'].touched">Please enter student email.</p>
 
         <label for="MemberName">Student Name: </label>
         <input id="MemberName" type="text" formControlName="MemberName">
+        <p *ngIf="!addStudentForm.controls['MemberName'].valid && addStudentForm.controls['MemberName'].touched">Please enter student name.</p>
 
         <label for="MemberPhone">Student Phone: </label>
         <input id="MemberPhone" type="tel" formControlName="MemberPhone">
-
+        <p *ngIf="!addStudentForm.controls['MemberPhone'].valid && addStudentForm.controls['MemberPhone'].touched">Please enter student phone number.</p>
 
         <input id="submitButton" type="submit" value="Submit" (click)="onSubmit(addStudentForm.value)">
 

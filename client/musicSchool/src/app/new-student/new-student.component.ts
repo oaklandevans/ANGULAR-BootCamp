@@ -13,6 +13,7 @@ export class NewStudentComponent implements OnInit {
 
   addStudentForm: FormGroup;
   student: Student;
+  errorMessage: string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -35,8 +36,14 @@ export class NewStudentComponent implements OnInit {
   }
 
   onSubmit(student): void {
-    this.organizationService.addMember(student).subscribe();
-    alert('Congratulations! New Student Added!');
+    this.organizationService.addMember(student).subscribe((res: any) => {
+        alert('Congratulations! New Student Added!');
+      }, err => {
+        this.errorMessage = err;
+        console.log(this.errorMessage = err.message);
+        alert('Sorry, Bad Request. Student not added.');
+      }
+    );
     this.location.back();
   }
 

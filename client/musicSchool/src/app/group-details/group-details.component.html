@@ -8,6 +8,7 @@
 
         <label for="GroupName">Class Name: </label>
         <input id="GroupName" type="text" formControlName="GroupName">
+        <p *ngIf="!groupForm.controls['GroupName'].valid && groupForm.controls['GroupName'].touched">Please enter a Class Name.</p>
 
         <label for="OrganizationName">Instrument: </label>
         <select name="OrganizationName" id="OrganizationName" formControlName="OrganizationName">
@@ -15,15 +16,19 @@
             <option value="Drums">Drums</option>
             <option value="Guitar">Guitar</option>
         </select>
+        <p *ngIf="!groupForm.controls['OrganizationName'].valid && groupForm.controls['OrganizationName'].touched">Please choose an Instrument.</p>
 
         <label for="SponsorName">Teacher Name: </label>
         <input id="SponsorName" type="text" formControlName="SponsorName">
+        <p *ngIf="!groupForm.controls['SponsorName'].valid && groupForm.controls['SponsorName'].touched">Please enter a Teacher Name.</p>
 
         <label for="SponsorPhone">Teacher Phone: </label>
         <input id="SponsorPhone" type="tel" formControlName="SponsorPhone">
+        <p *ngIf="!groupForm.controls['SponsorPhone'].valid && groupForm.controls['SponsorPhone'].touched">Please enter a Teacher Phone #.</p>
 
         <label for="SponsorEmail">Teacher Email: </label>
         <input id="SponsorEmail" type="email" formControlName="SponsorEmail">
+        <p *ngIf="!groupForm.controls['SponsorEmail'].valid && groupForm.controls['SponsorEmail'].touched">Please enter a Teacher Email.</p>
 
         <label for="MaxGroupSize">Class Capacity: </label>
         <input id="MaxGroupSize" type="number" formControlName="MaxGroupSize">
