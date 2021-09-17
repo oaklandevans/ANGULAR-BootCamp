@@ -13,6 +13,7 @@ export class NewClassComponent implements OnInit {
 
   addClassForm: FormGroup;
   class: MusicClass;
+  errorMessage: string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -23,6 +24,7 @@ export class NewClassComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    window.scrollTo(0,0);
   }
 
   initializeForm(): void {
@@ -39,8 +41,13 @@ export class NewClassComponent implements OnInit {
   }
 
   onSubmit(musicClass): void {
-    this.organizationService.addGroup(musicClass).subscribe();
-    alert('New Class Added!');
+    this.organizationService.addGroup(musicClass).subscribe(() => {
+      alert('New Class Added!');
+    }, err => {
+      this.errorMessage = err;
+      console.log(this.errorMessage = err.message);
+      alert('Sorry, Bad Request. Group not added.');
+    });
     this.location.back();
   }
 

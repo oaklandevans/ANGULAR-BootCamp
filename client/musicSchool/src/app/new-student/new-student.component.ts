@@ -23,6 +23,7 @@ export class NewStudentComponent implements OnInit {
 
   ngOnInit(): void {
     this.initializeForm();
+    window.scrollTo(0,0);
   }
 
   initializeForm(): void {
@@ -42,9 +43,11 @@ export class NewStudentComponent implements OnInit {
         this.errorMessage = err;
         console.log(this.errorMessage = err.message);
         alert('Sorry, Bad Request. Student not added.');
+      }, () => {
+        this.location.back();
       }
     );
-    this.location.back();
+    
   }
 
 }

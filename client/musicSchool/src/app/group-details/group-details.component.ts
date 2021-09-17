@@ -27,6 +27,7 @@ export class GroupDetailsComponent implements OnInit {
     this.currentGroupId = this.organizationService.currentGroupId;
     this.initializeComponent();
     this.initializeForm();
+    window.scrollTo(0,0);
   }
 
   initializeComponent(): void {
@@ -66,9 +67,16 @@ export class GroupDetailsComponent implements OnInit {
 
   onSaveForm(musicClass): void {
     if (window.confirm('Are you sure you want to save current class details?')) {
-      this.organizationService.updateGroup(musicClass).subscribe();
+      this.organizationService.updateGroup(musicClass).subscribe(() => {
+        alert('Congratulations! Group Updated Successfully.');
+        this.location.back();
+      }, err => {
+        this.errorMessage = err;
+        console.log(this.errorMessage = err.message);
+        alert('Sorry, Bad Request. Group not updated.');
+        this.location.back();
+      });
     }
-    this.location.back();
   }
 
   saveMemberId(studentId: number): void {
@@ -81,7 +89,16 @@ export class GroupDetailsComponent implements OnInit {
   deleteCurrentGroup(): void {
     if (window.confirm('Are you sure you want to delete this class?'))
     {
-      this.organizationService.deleteCurrentGroup().subscribe();
+      this.organizationService.deleteCurrentGroup().subscribe(() => {
+        alert('Group Deleted Successfully.');
+        this.location.back();
+      }, err => {
+        this.errorMessage = err;
+        console.log(this.errorMessage = err.message);
+        alert('Sorry, Bad Request. Group not deleted.');
+        this.location.back();
+      }
+      );
       this.location.back();
     }
   }

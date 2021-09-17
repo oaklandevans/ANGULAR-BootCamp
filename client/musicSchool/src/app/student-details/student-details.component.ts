@@ -30,6 +30,7 @@ export class StudentDetailsComponent implements OnInit {
     this.currentMemberId = this.organizationService.currentMemberId;
     this.initializeForm();
     this.initializeComponent();
+    window.scrollTo(0,0);
   }
 
   initializeComponent(): void {
@@ -66,17 +67,30 @@ export class StudentDetailsComponent implements OnInit {
 
   onSaveForm(student: Student): void {
     if (window.confirm('Are you sure you want to save current student details?')) {
-      this.organizationService.updateMemberOfGroup(student).subscribe();
-      alert('Student Successfully Updated!');
+      this.organizationService.updateMemberOfGroup(student).subscribe(() => {
+        alert('Student Updated Successfully.');
+      }, err => {
+        this.errorMessage = err;
+        console.log(this.errorMessage = err.message);
+        alert('Sorry, Bad Request. Student not updated.');
+      }, () => {
+        this.location.back();
+      });
     }
-    this.location.back();
+    
   }
 
   deleteCurrentStudent(): void {
     if (window.confirm('Are you sure you want to delete this student?')) {
-      this.organizationService.deleteCurrentStudent().subscribe();
-      alert('Student Successfully Deleted!');
-      this.location.back();
+      this.organizationService.deleteCurrentStudent().subscribe(() => {
+        alert('Student Deleted Successfully.');
+      }, err => {
+        this.errorMessage = err;
+        console.log(this.errorMessage = err.message);
+        alert('Sorry, Bad Request. Student not deleted.');
+      }, () => {
+        this.location.back();
+      });
     }
   }
 

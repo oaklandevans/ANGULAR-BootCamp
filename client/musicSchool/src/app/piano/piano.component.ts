@@ -18,6 +18,7 @@ export class PianoComponent implements OnInit {
 
   ngOnInit(): void {
     this.initializeComponent();
+    window.scrollTo(0,0);
   }
 
   initializeComponent(): void {
