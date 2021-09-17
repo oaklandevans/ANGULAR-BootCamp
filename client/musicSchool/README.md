@@ -15,6 +15,8 @@ Open the folder containing the client and server files in editor of your choice.
 
 cd client/musicSchool   // to get into the project
 
+npm install             // to install dependencies
+
 ng serve --open         // to run and open app in a browser
 
 #  run server
